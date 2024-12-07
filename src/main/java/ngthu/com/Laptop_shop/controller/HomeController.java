@@ -97,7 +97,7 @@ public class HomeController {
     public String products(Model m,
                            @RequestParam(value = "category", defaultValue = "") String category,
                            @RequestParam(name = "pageNo", defaultValue = "0") Integer pageNo,
-                           @RequestParam(name = "pageSize", defaultValue = "9") Integer pageSize,
+                           @RequestParam(name = "pageSize", defaultValue = "8") Integer pageSize,
                            @RequestParam(defaultValue = "") String ch,
                            @RequestParam(defaultValue = "") String priceRange) {
 

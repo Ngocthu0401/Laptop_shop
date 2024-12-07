@@ -103,7 +103,7 @@
 
 
     .dropdown-menu .dropdown-item:hover {
-        color: #091057 !important;
+        color: #FBA834 !important;
         background-color: #FFF;
     }
 
@@ -131,26 +131,26 @@
         <th:block th:if="${user==null}">
           <li class="nav-item"><a class="nav-link active"
                                   aria-current="page" href="/"><i class="fa-solid fa-house"></i>
-            Trang chủ</a></li>
+            Home</a></li>
         </th:block>
 
         <th:block th:unless="${user==null}">
           <li class="nav-item" th:if="${user.role=='ROLE_ADMIN'}"><a
                   class="nav-link active" aria-current="page" href="/admin/"><i
-                  class="fa-solid fa-house"></i> Trang chủ</a></li>
+                  class="fa-solid fa-house"></i> Home</a></li>
 
           <li class="nav-item" th:if="${user.role=='ROLE_USER'}"><a
                   class="nav-link active" aria-current="page" href="/"><i
-                  class="fa-solid fa-house"></i> Trang chủ</a></li>
+                  class="fa-solid fa-house"></i> Home</a></li>
         </th:block>
 
         <li class="nav-item"><a class="nav-link active"
-                                aria-current="page" href="/products">Sản phẩm</a></li>
+                                aria-current="page" href="/products">Products</a></li>
 
         <!-- Start Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-             style=" color: #FFF;">Thể loại</a>
+             style=" color: #FFF;">Category</a>
           <ul class="dropdown-menu">
             <li th:each="c:${categorys}">
               <a class="dropdown-item" th:href="@{'/products?category='+${c.name}}"
@@ -168,9 +168,9 @@
         <th:block th:if="${user==null}">
           <li class="nav-item"><a class="nav-link active"
                                   aria-current="page" href="/signin"><i
-                  class="fa-solid fa-right-to-bracket"></i> Đăng Nhập</a></li>
+                  class="fa-solid fa-right-to-bracket"></i> Log In</a></li>
           <li class="nav-item"><a class="nav-link active"
-                                  aria-current="page" href="/register">Đăng Ký</a></li>
+                                  aria-current="page" href="/register">Register</a></li>
         </th:block>
 
         <th:block th:if="${user!=null}">
@@ -187,14 +187,14 @@
           </a>
             <ul class="dropdown-menu">
               <li th:if="${user.role=='ROLE_USER'}"><a
-                      class="dropdown-item" href="/user/profile">Tài Khoản</a></li>
+                      class="dropdown-item" href="/user/profile">Profile</a></li>
 
               <li th:if="${user.role=='ROLE_ADMIN'}"><a
-                      class="dropdown-item" href="/admin/profile">Tài Khoản</a></li>
+                      class="dropdown-item" href="/admin/profile">Profile</a></li>
 
               <li th:if="${user.role=='ROLE_USER'}"><a
-                      class="dropdown-item" href="/user/user-orders">Giỏ hàng</a></li>
-              <li><a class="dropdown-item" href="/logout">Đăng Xuất</a></li>
+                      class="dropdown-item" href="/user/user-orders">My Orders</a></li>
+              <li><a class="dropdown-item" href="/logout">Log Out</a></li>
               <li><hr class="dropdown-divider"></li>
 
             </ul></li>
@@ -211,8 +211,51 @@
 <div th:replace="${content}"></div>
 
 <!-- Start Footer -->
-<div class="footer">
-  <p>NTHphoneStore.com</p>
+<div class="footer" style="background-color: #387ADF; color: white; padding: 20px 0; text-align: center;">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; padding: 0 10px;">
+    <!-- Footer Column 1: Contact Us -->
+    <div class="col-md-3" style="flex: 1 1 30%; margin: 10px; text-align: left;">
+      <h5 style="font-size: 1.2rem; font-weight: bold; margin-bottom: 20px;">Contact Us</h5>
+      <p style="font-size: 1rem;">Email: support@nthphonestore.com</p>
+      <p style="font-size: 1rem;">Phone: +1 234 567 890</p>
+      <p style="font-size: 1rem;">Address: 123 Main Street, City, Country</p>
+    </div>
+
+    <!-- Footer Column 2: Follow Us -->
+    <div class="col-md-3" style="flex: 1 1 30%; margin: 10px; text-align: center;">
+      <h5 style="font-size: 1.2rem; font-weight: bold; margin-bottom: 20px;">Follow Us</h5>
+      <ul class="social-icons" style="list-style: none; padding: 0;">
+        <li style="display: inline-block; margin-right: 15px;"><a href="https://facebook.com/nthphonestore" style="color: white; font-size: 1rem;"><i class="fab fa-facebook"></i> Facebook</a></li>
+        <li style="display: inline-block; margin-right: 15px;"><a href="https://twitter.com/nthphonestore" style="color: white; font-size: 1rem;"><i class="fab fa-twitter"></i> Twitter</a></li>
+        <li style="display: inline-block; margin-right: 15px;"><a href="https://instagram.com/nthphonestore" style="color: white; font-size: 1rem;"><i class="fab fa-instagram"></i> Instagram</a></li>
+          </ul>
+    </div>
+
+    <!-- Footer Column 3: Payment Methods -->
+    <div class="col-md-3" style="flex: 1 1 30%; margin: 10px; text-align: center;">
+      <h5 style="font-size: 1.2rem; font-weight: bold; margin-bottom: 20px;">Payment Methods</h5>
+      <ul class="payment-methods" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px;">
+        <li style="font-size: 1rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <i class="fab fa-visa" style="font-size: 2rem; margin-bottom: 5px;"></i>
+          Visa
+        </li>
+
+        <li style="font-size: 1rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <i class="fab fa-paypal" style="font-size: 2rem; margin-bottom: 5px;"></i>
+          PayPal
+        </li>
+        <li style="font-size: 1rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <i class="fab fa-apple-pay" style="font-size: 2rem; margin-bottom: 5px;"></i>
+          Apple Pay
+        </li>
+      </ul>
+    </div>
+    </div>
+    <!-- Footer Bottom: Copyright and Terms -->
+  <div class="footer-bottom" style="background-color: #333A73; padding: 10px 0; text-align: center;">
+    <p style="margin: 0; font-size: 1rem;">&copy; 2024 NTHphoneStore.com. All Rights Reserved.</p>
+    <p style="margin: 0; font-size: 1rem;"><a href="#" style="color: #FFA500;">Terms of Service</a> | <a href="#" style="color: #FFA500;">Privacy Policy</a></p>
+  </div>
 </div>
 <!-- End Footer -->
 

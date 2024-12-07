@@ -16,7 +16,7 @@
             <div class="col-md-6 mt-3 p-5">
                 <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
                     <div class="card-header">
-                        <p class="fs-4 text-center">Đăng Nhập</p>
+                        <p class="fs-4 text-center">LOG IN</p>
                         <div th:if="${param.error}"
                              class="alert alert-danger text-center">
 
@@ -30,7 +30,7 @@
                         </div>
 
                         <div th:if="${param.logout}" class="alert alert-success">
-                            Đăng Xuất Thành Công</div>
+                            Log Out Successfully</div>
                     </div>
                     <div class="card-body">
                         <form action="/login" method="post">
@@ -40,17 +40,17 @@
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label">Mật Khẩu</label> <input required
+                                <label class="form-label">Password</label> <input required
                                                                                   class="form-control" name="password" type="password">
                             </div>
                             <button type="submit"
-                                    class="btn bg-primary text-white col-md-12">Đăng Nhập</button>
+                                    class="btn bg-primary text-white col-md-12">Log In</button>
                         </form>
                     </div>
 
                     <div class="card-footer text-center">
-                        <a href="/forgot-password" class="text-decoration-none">Quên Mật Khẩu</a><br>
-                        Chưa có tài khoản ? <a href="/register" class="text-decoration-none">Tạo</a>
+                        <a href="/forgot-password" class="text-decoration-none">Forgot Password</a><br>
+                        Don't have an account ? <a href="/register" class="text-decoration-none">Create</a>
                     </div>
                 </div>
             </div>

@@ -46,16 +46,20 @@
     <!-- Start Category Module -->
     <div class="container">
         <div class="row">
-            <p class="text-center fs-4 mt-3" style="color: #B22222; font-weight: bold;">Thể Loại</p>
+            <p class="text-center fs-4 mt-3" style="color:#333A73; font-weight: bold;">Category</p>
             <div class="col-md-2" th:each="c:${category}">
                 <div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded"
                      style="transition: border 0.3s ease;"
-                     onmouseover="this.style.border='2px solid #FF6347';"
+                     onmouseover="this.style.border='2px solid #333A73';"
                      onmouseout="this.style.border='';">
                     <div class="card-body text-center">
                         <img th:src="@{'img/category_img/'+${c.imageName}}" width="65%" height="140px"><br>
-                        <a th:href="@{'/products?category='+${c.name}}" class="text-decoration-none"
-                           style="color: #FF6347; font-weight: bold;">[[${c.name}]]</a>
+                        <a th:href="@{'/products?category='+${c.name}}"
+                           class="text-decoration-none"
+                           style="color: #333A73; font-weight: bold; font-size:12px; transition: color 0.3s ease;"
+                           onmouseover="this.style.color='#FBA834';" onmouseout="this.style.color='#333A73';">
+                            [[${c.name}]]
+                        </a>
                     </div>
                 </div>
             </div>
@@ -66,7 +70,7 @@
     <!-- Start Latest Product Module -->
     <div class="container-fluid bg-light p-3">
         <div class="row">
-            <p class="text-center fs-4" style="color: #B22222; font-weight: bold;">Sản Phẩm Mới Nhất</p>
+            <p class="text-center fs-4" style="color: #333A73; font-weight: bold;">Lastest Products</p>
 
             <div class="col-md-3" th:each="p:${products}">
                 <div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded"
@@ -76,18 +80,22 @@
                     <div class="card-body text-center">
                         <img alt="" th:src="@{'img/product_img/'+${p.image}}" class="" width="65%" height="140px">
                         <p class="text-center mt-3">
-                            <a th:href="@{'/product/'+${p.id}}" class="text-decoration-none" style="color: #FF6347; font-weight: bold;">[[${p.title}]]</a>
+                            <a th:href="@{'/product/'+${p.id}}"
+                               class="text-decoration-none"
+                               style="color: #333A73; font-weight: bold; transition: color 0.3s ease;"
+                               onmouseover="this.style.color='#FBA834';" onmouseout="this.style.color='#333A73';">
+                                [[${p.title}]]
+                            </a>
 
                         </p>
                         <!-- Product price -->
-                        <p class="text-center" style="font-size: 16px; color: #B22222;font-weight: bold;margin-bottom: 3px;">
-                           [[${p.discountPrice}]]
+                        <p class="text-center" style="font-size: 16px; color: #FF6347;font-weight: bold;margin-bottom: 3px;">
+                            &#36; [[${p.discountPrice}]]
                         </p>
 
                         <p class="text-center " style="font-size: 16px; color: #333;font-weight: bold;margin-top: 3px;">
-                            <span style="text-decoration: line-through; color: #888;">[[${p.price}]]</span>
+                            <span style="text-decoration: line-through; color: #888;">	&#36; [[${p.price}]]</span>
                         </p>
-                        <!-- Add the "Trả góp 0%" label in the top-left corner with background -->
                         <div class="installment-label" style="position: absolute; top: 10px; left: 10px; background-color: #FF6347; color: white; padding: 2px 4px; font-weight: bold; border-radius: 5px; font-size: 10px;">
                             Trả góp 0%
                         </div>
