@@ -239,7 +239,7 @@ $resetPassword.validate({
 			confirmPassword: {
 				required: true,
 				space: true,
-				equalTo: '#pass'
+				equalTo: '[name="password"]'
 
 			}
 		},
@@ -249,7 +249,7 @@ $resetPassword.validate({
 				space: 'space not allowed'
 
 			},
-			confirmpassword: {
+			confirmPassword: {
 				required: 'confirm password must be required',
 				space: 'space not allowed',
 				equalTo: 'password mismatch'
@@ -257,7 +257,16 @@ $resetPassword.validate({
 			}
 		}
 })
+
+
+
+
+
+
+
 })
+
+
 
 jQuery.validator.addMethod('lettersonly', function(value, element) {
 		return /^[^-\s][a-zA-Z_\s-]+$/.test(value);
@@ -275,6 +284,8 @@ jQuery.validator.addMethod('lettersonly', function(value, element) {
 	jQuery.validator.addMethod('numericOnly', function(value, element) {
 		return /^[0-9]+$/.test(value);
 	});
+
+
 
 $(document).ready(function () {
     // Khi người dùng di chuột qua sao
